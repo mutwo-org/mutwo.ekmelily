@@ -21,11 +21,11 @@ except ImportError:
     import fractions  # type: ignore
 
 from mutwo.core.converters import abc as converters_abc
-from mutwo.core.parameters import pitches
-from mutwo.core.parameters import pitches_constants
 from mutwo.core.utilities import constants
 
 from mutwo.ext.converters import frontends
+from mutwo.ext.parameters import pitches
+from mutwo.ext.parameters import pitches_constants
 
 __all__ = (
     "EkmelilyAccidental",

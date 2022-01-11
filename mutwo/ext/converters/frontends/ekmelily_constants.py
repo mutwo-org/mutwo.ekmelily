@@ -11,8 +11,8 @@ except ImportError:
     import fractions  # type: ignore
 
 
-from mutwo.core.parameters import pitches
-from mutwo.core.parameters import pitches_constants
+from mutwo.ext.parameters import pitches
+from mutwo.ext.parameters import pitches_constants
 
 DEFAULT_GLOBAL_SCALE = (
     fractions.Fraction(0),
