@@ -9,7 +9,7 @@ Ekmelily extension for event based library [mutwo](https://github.com/mutwo-org/
 
 This extension implements:
 
-- mutwo.ext.converters.frontends.ekmelily extension package.
+- `mutwo.ekmelily_converters`
 
 ### Installation
 

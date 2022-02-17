@@ -10,9 +10,7 @@ try:
 except ImportError:
     import fractions  # type: ignore
 
-
-from mutwo.ext.parameters import pitches
-from mutwo.ext.parameters import pitches_constants
+from mutwo import music_parameters
 
 DEFAULT_GLOBAL_SCALE = (
     fractions.Fraction(0),
@@ -34,318 +32,248 @@ PRIME_AND_EXPONENT_AND_TRADITIONAL_ACCIDENTAL_TO_ACCIDENTAL_GLYPH_DICT = {
     (
         None,
         None,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(0, 1)
         ],
-    ): (
-        "#xE261"
-    ),
+    ): ("#xE261"),
     (
         None,
         None,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(1, 1)
         ],
-    ): (
-        "#xE262"
-    ),
+    ): ("#xE262"),
     (
         None,
         None,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(2, 1)
         ],
-    ): (
-        "#xE263"
-    ),
+    ): ("#xE263"),
     (
         None,
         None,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             -fractions.Fraction(1, 1)
         ],
-    ): (
-        "#xE260"
-    ),
+    ): ("#xE260"),
     (
         None,
         None,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             -fractions.Fraction(2, 1)
         ],
-    ): (
-        "#xE264"
-    ),
+    ): ("#xE264"),
     (
         5,
         1,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(0, 1)
         ],
-    ): (
-        "#xE2C2"
-    ),
+    ): ("#xE2C2"),
     (
         5,
         2,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(0, 1)
         ],
-    ): (
-        "#xE2C2"
-    ),
+    ): ("#xE2C2"),
     (
         5,
         3,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(0, 1)
         ],
-    ): (
-        "#xE2D6"
-    ),
+    ): ("#xE2D6"),
     (
         5,
         -1,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(0, 1)
         ],
-    ): (
-        "#xE2C7"
-    ),
+    ): ("#xE2C7"),
     (
         5,
         -2,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(0, 1)
         ],
-    ): (
-        "#xE2D1"
-    ),
+    ): ("#xE2D1"),
     (
         5,
         -3,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(0, 1)
         ],
-    ): (
-        "#xE2DB"
-    ),
+    ): ("#xE2DB"),
     (
         5,
         1,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(1, 1)
         ],
-    ): (
-        "#xE2C3"
-    ),
+    ): ("#xE2C3"),
     (
         5,
         2,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(1, 1)
         ],
-    ): (
-        "#xE2CD"
-    ),
+    ): ("#xE2CD"),
     (
         5,
         3,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(1, 1)
         ],
-    ): (
-        "#xE2D7"
-    ),
+    ): ("#xE2D7"),
     (
         5,
         -1,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(1, 1)
         ],
-    ): (
-        "#xE2C8"
-    ),
+    ): ("#xE2C8"),
     (
         5,
         -2,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(1, 1)
         ],
-    ): (
-        "#xE2D2"
-    ),
+    ): ("#xE2D2"),
     (
         5,
         -3,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(1, 1)
         ],
-    ): (
-        "#xE2DC"
-    ),
+    ): ("#xE2DC"),
     (
         5,
         1,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(2, 1)
         ],
-    ): (
-        "#xE2C4"
-    ),
+    ): ("#xE2C4"),
     (
         5,
         2,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(2, 1)
         ],
-    ): (
-        "#xE2CE"
-    ),
+    ): ("#xE2CE"),
     (
         5,
         3,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(2, 1)
         ],
-    ): (
-        "#xE2D8"
-    ),
+    ): ("#xE2D8"),
     (
         5,
         -1,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(2, 1)
         ],
-    ): (
-        "#xE2C9"
-    ),
+    ): ("#xE2C9"),
     (
         5,
         -2,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(2, 1)
         ],
-    ): (
-        "#xE2D3"
-    ),
+    ): ("#xE2D3"),
     (
         5,
         -3,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(2, 1)
         ],
-    ): (
-        "#xE2DD"
-    ),
+    ): ("#xE2DD"),
     (
         5,
         1,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             -fractions.Fraction(1, 1)
         ],
-    ): (
-        "#xE2C1"
-    ),
+    ): ("#xE2C1"),
     (
         5,
         2,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             -fractions.Fraction(1, 1)
         ],
-    ): (
-        "#xE2CB"
-    ),
+    ): ("#xE2CB"),
     (
         5,
         3,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             -fractions.Fraction(1, 1)
         ],
-    ): (
-        "#xE2D5"
-    ),
+    ): ("#xE2D5"),
     (
         5,
         -1,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             -fractions.Fraction(1, 1)
         ],
-    ): (
-        "#xE2C6"
-    ),
+    ): ("#xE2C6"),
     (
         5,
         -2,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             -fractions.Fraction(1, 1)
         ],
-    ): (
-        "#xE2D0"
-    ),
+    ): ("#xE2D0"),
     (
         5,
         -3,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             -fractions.Fraction(1, 1)
         ],
-    ): (
-        "#xE2DA"
-    ),
+    ): ("#xE2DA"),
     (
         5,
         1,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             -fractions.Fraction(2, 1)
         ],
-    ): (
-        "#xE2C0"
-    ),
+    ): ("#xE2C0"),
     (
         5,
         2,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             -fractions.Fraction(2, 1)
         ],
-    ): (
-        "#xE2CA"
-    ),
+    ): ("#xE2CA"),
     (
         5,
         3,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             -fractions.Fraction(2, 1)
         ],
-    ): (
-        "#xE2D4"
-    ),
+    ): ("#xE2D4"),
     (
         5,
         -1,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             -fractions.Fraction(2, 1)
         ],
-    ): (
-        "#xE2C5"
-    ),
+    ): ("#xE2C5"),
     (
         5,
         -2,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             -fractions.Fraction(2, 1)
         ],
-    ): (
-        "#xE2CF"
-    ),
+    ): ("#xE2CF"),
     (
         5,
         -3,
-        pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+        music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             -fractions.Fraction(2, 1)
         ],
-    ): (
-        "#xE2D9"
-    ),
+    ): ("#xE2D9"),
     (7, 1, None): "#xE2DE",
     (7, 2, None): "#xE2E0",
     (7, -1, None): "#xE2DF",
@@ -366,64 +294,50 @@ glyph name in Ekmelos."""
 
 
 TEMPERED_ACCIDENTAL_TO_ACCIDENTAL_GLYPH_DICT = {
-    pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+    music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
         fractions.Fraction(0, 1)
-    ]: (
-        "#xE2F2"
-    ),
-    pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+    ]: ("#xE2F2"),
+    music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
         fractions.Fraction(1, 1)
-    ]: (
-        "#xE2F3"
-    ),
-    pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+    ]: ("#xE2F3"),
+    music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
         fractions.Fraction(2, 1)
-    ]: (
-        "#xE2F4"
-    ),
-    pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+    ]: ("#xE2F4"),
+    music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
         -fractions.Fraction(1, 1)
-    ]: (
-        "#xE2F1"
-    ),
-    pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+    ]: ("#xE2F1"),
+    music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
         -fractions.Fraction(2, 1)
-    ]: (
-        "#xE2F0"
-    ),
-    pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+    ]: ("#xE2F0"),
+    music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
         fractions.Fraction(1, 2)
-    ]: (
-        "#xE2F6"
-    ),
-    pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+    ]: ("#xE2F6"),
+    music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
         -fractions.Fraction(1, 2)
-    ]: (
-        "#xE2F5"
-    ),
+    ]: ("#xE2F5"),
 }
 """Mapping of tempered accidental name to glyph name in Ekmelos."""
 
 TEMPERED_ACCIDENTAL_TO_CENT_DEVIATION_DICT = {
-    pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+    music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
         fractions.Fraction(0, 1)
     ]: 0,
-    pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+    music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
         fractions.Fraction(1, 1)
     ]: 100,
-    pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+    music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
         fractions.Fraction(2, 1)
     ]: 200,
-    pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+    music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
         -fractions.Fraction(1, 1)
     ]: -100,
-    pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+    music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
         -fractions.Fraction(2, 1)
     ]: -200,
-    pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+    music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
         fractions.Fraction(1, 2)
     ]: 50,
-    pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+    music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
         -fractions.Fraction(1, 2)
     ]: -50,
 }
@@ -447,7 +361,10 @@ DEFAULT_PRIME_TO_HIGHEST_ALLOWED_EXPONENT_DICT = {
     # for prime, highest_allowed_comma in zip(
     #     (5, 7, 11, 13, 17, 19, 23), (3, 2, 1, 1, 1, 1, 1),
     # )
-    for prime, highest_allowed_comma in zip((5, 7, 11, 13, 17), (3, 2, 1, 1, 1),)
+    for prime, highest_allowed_comma in zip(
+        (5, 7, 11, 13, 17),
+        (3, 2, 1, 1, 1),
+    )
 }
 """Default value for
 :class:`~mutwo.ext.converters.frontends.ekmelily.HEJIEkmelilyTuningFileConverter`
@@ -475,25 +392,25 @@ DEFAULT_EXPONENT_TO_EXPONENT_INDICATOR = lambda exponent: chr(ord("a") + exponen
 argument `exponent_to_exponent_indicator`."""
 
 PYTHAGOREAN_ACCIDENTAL_CENT_DEVIATION_SIZE = round(
-    (pitches.JustIntonationPitch((0, 7)).normalize(mutate=False).cents), 2  # type: ignore
+    (music_parameters.JustIntonationPitch((0, 7)).normalize(mutate=False).cents), 2  # type: ignore
 )
 """Step in cents for one pythagorean accidental (# or b)."""
 
 PYTHAGOREAN_ACCIDENTAL_TO_CENT_DEVIATION_DICT = {
-    pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+    music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
         fractions.Fraction(0, 1)
     ]: 0,
-    pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+    music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
         fractions.Fraction(1, 1)
     ]: PYTHAGOREAN_ACCIDENTAL_CENT_DEVIATION_SIZE,
-    pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+    music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
         fractions.Fraction(2, 1)
     ]: PYTHAGOREAN_ACCIDENTAL_CENT_DEVIATION_SIZE
     * 2,
-    pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+    music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
         -fractions.Fraction(1, 1)
     ]: -PYTHAGOREAN_ACCIDENTAL_CENT_DEVIATION_SIZE,
-    pitches_constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
+    music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
         -fractions.Fraction(2, 1)
     ]: -2
     * PYTHAGOREAN_ACCIDENTAL_CENT_DEVIATION_SIZE,
@@ -501,7 +418,7 @@ PYTHAGOREAN_ACCIDENTAL_TO_CENT_DEVIATION_DICT = {
 """Step in cents mapping for each pythagorean accidental (# or b)."""
 
 DIFFERENCE_BETWEEN_PYTHAGOREAN_AND_TEMPERED_FIFTH = (
-    pitches.JustIntonationPitch("3/2").cents - 700
+    music_parameters.JustIntonationPitch("3/2").cents - 700
 )
 """The difference in cents between a just fifth (3/2) and
 a 12-EDO fifth. This constant is used in

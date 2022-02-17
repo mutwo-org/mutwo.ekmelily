@@ -7,8 +7,7 @@ try:
 except ImportError:
     import fractions  # type: ignore
 
-from mutwo.ext.converters.frontends import ekmelily
-from mutwo.ext.converters.frontends import ekmelily_constants
+from mutwo import ekmelily_converters
 
 
 class EkmelilyTuningFileConverterTest(unittest.TestCase):
@@ -20,7 +19,7 @@ class EkmelilyTuningFileConverterTest(unittest.TestCase):
             fractions.Fraction(f) for f in "0 1 2 5/2 7/2 9/2 10/2".split(" ")
         )
         self.assertEqual(
-            ekmelily.EkmelilyTuningFileConverter._correct_global_scale(
+            ekmelily_converters.EkmelilyTuningFileConverter._correct_global_scale(
                 test_global_scale
             ),
             corrected_global_scale,
@@ -29,19 +28,19 @@ class EkmelilyTuningFileConverterTest(unittest.TestCase):
     def test_deviation_in_cents_to_alteration_fraction(self):
         self.assertEqual(
             fractions.Fraction(1, 1),
-            ekmelily.EkmelilyTuningFileConverter._deviation_in_cents_to_alteration_fraction(
+            ekmelily_converters.EkmelilyTuningFileConverter._deviation_in_cents_to_alteration_fraction(
                 200
             ),
         )
         self.assertEqual(
             fractions.Fraction(2, 1),
-            ekmelily.EkmelilyTuningFileConverter._deviation_in_cents_to_alteration_fraction(
+            ekmelily_converters.EkmelilyTuningFileConverter._deviation_in_cents_to_alteration_fraction(
                 400
             ),
         )
         self.assertEqual(
             fractions.Fraction(1, 2),
-            ekmelily.EkmelilyTuningFileConverter._deviation_in_cents_to_alteration_fraction(
+            ekmelily_converters.EkmelilyTuningFileConverter._deviation_in_cents_to_alteration_fraction(
                 100
             ),
         )
@@ -49,13 +48,13 @@ class EkmelilyTuningFileConverterTest(unittest.TestCase):
     def test_alteration_fraction_to_deviation_in_cents(self):
         self.assertEqual(
             200,
-            ekmelily.EkmelilyTuningFileConverter._alteration_fraction_to_deviation_in_cents(
+            ekmelily_converters.EkmelilyTuningFileConverter._alteration_fraction_to_deviation_in_cents(
                 fractions.Fraction(1, 1),
             ),
         )
         self.assertEqual(
             -200,
-            ekmelily.EkmelilyTuningFileConverter._alteration_fraction_to_deviation_in_cents(
+            ekmelily_converters.EkmelilyTuningFileConverter._alteration_fraction_to_deviation_in_cents(
                 -fractions.Fraction(1, 1),
             ),
         )
@@ -63,19 +62,19 @@ class EkmelilyTuningFileConverterTest(unittest.TestCase):
     def test_accidental_index_to_alteration_code(self):
         self.assertEqual(
             "#x12",
-            ekmelily.EkmelilyTuningFileConverter._accidental_index_to_alteration_code(
+            ekmelily_converters.EkmelilyTuningFileConverter._accidental_index_to_alteration_code(
                 18
             ),
         )
 
     def test_group_accidentals_by_deviations_in_cents(self):
         dummy_accidentals = (
-            ekmelily.EkmelilyAccidental("s", ("#xE262",), 100),
-            ekmelily.EkmelilyAccidental("f", ("#xE260",), -100),
-            ekmelily.EkmelilyAccidental("sharp", ("#xE262",), 100),
-            ekmelily.EkmelilyAccidental("flat", ("#xE260",), -100),
-            ekmelily.EkmelilyAccidental("lonely", ("#xE265",), 1),
-            ekmelily.EkmelilyAccidental("also_lonely", ("#xE266",), -20),
+            ekmelily_converters.EkmelilyAccidental("s", ("#xE262",), 100),
+            ekmelily_converters.EkmelilyAccidental("f", ("#xE260",), -100),
+            ekmelily_converters.EkmelilyAccidental("sharp", ("#xE262",), 100),
+            ekmelily_converters.EkmelilyAccidental("flat", ("#xE260",), -100),
+            ekmelily_converters.EkmelilyAccidental("lonely", ("#xE265",), 1),
+            ekmelily_converters.EkmelilyAccidental("also_lonely", ("#xE266",), -20),
         )
 
         grouped_accidentals = (
@@ -90,7 +89,7 @@ class EkmelilyTuningFileConverterTest(unittest.TestCase):
             ),
         )
 
-        result = ekmelily.EkmelilyTuningFileConverter._group_accidentals_by_deviations_in_cents(
+        result = ekmelily_converters.EkmelilyTuningFileConverter._group_accidentals_by_deviations_in_cents(
             dummy_accidentals
         )
         # transform tuples to sets because order doesn't matter
@@ -103,16 +102,16 @@ class EkmelilyTuningFileConverterTest(unittest.TestCase):
     def test_convert(self):
         # regression test with doc string example
         comparision_file_path = (
-            "tests/converters/frontends/ekmelily_expected_conversion_output.ily"
+            "tests/converters/ekmelily_expected_conversion_output.ily"
         )
 
-        test_file_path = "tests/converters/frontends/ekme-test.ily"
-        natural = ekmelily.EkmelilyAccidental("", ("#xE261",), 0)
-        sharp = ekmelily.EkmelilyAccidental("s", ("#xE262",), 100)
-        flat = ekmelily.EkmelilyAccidental("f", ("#xE260",), -100)
-        eigth_tone_sharp = ekmelily.EkmelilyAccidental("es", ("#xE2C7",), 25)
-        eigth_tone_flat = ekmelily.EkmelilyAccidental("ef", ("#xE2C2",), -25)
-        converter = ekmelily.EkmelilyTuningFileConverter(
+        test_file_path = "tests/converters/ekme-test.ily"
+        natural = ekmelily_converters.EkmelilyAccidental("", ("#xE261",), 0)
+        sharp = ekmelily_converters.EkmelilyAccidental("s", ("#xE262",), 100)
+        flat = ekmelily_converters.EkmelilyAccidental("f", ("#xE260",), -100)
+        eigth_tone_sharp = ekmelily_converters.EkmelilyAccidental("es", ("#xE2C7",), 25)
+        eigth_tone_flat = ekmelily_converters.EkmelilyAccidental("ef", ("#xE2C2",), -25)
+        converter = ekmelily_converters.EkmelilyTuningFileConverter(
             test_file_path, (natural, sharp, flat, eigth_tone_sharp, eigth_tone_flat)
         )
         converter.convert()
@@ -127,7 +126,7 @@ class HEJIEkmelilyTuningFileConverterTest(unittest.TestCase):
     ):
         diff_just_and_tempered_fifth = 1.955000865387433
         self.assertEqual(
-            ekmelily.HEJIEkmelilyTuningFileConverter._find_difference_in_cents_from_tempered_pitch_class_for_diatonic_pitches(
+            ekmelily_converters.HEJIEkmelilyTuningFileConverter._find_difference_in_cents_from_tempered_pitch_class_for_diatonic_pitches(
                 "c"
             ),
             (
@@ -141,7 +140,7 @@ class HEJIEkmelilyTuningFileConverterTest(unittest.TestCase):
             ),
         )
         self.assertEqual(
-            ekmelily.HEJIEkmelilyTuningFileConverter._find_difference_in_cents_from_tempered_pitch_class_for_diatonic_pitches(
+            ekmelily_converters.HEJIEkmelilyTuningFileConverter._find_difference_in_cents_from_tempered_pitch_class_for_diatonic_pitches(
                 "a"
             ),
             (
@@ -157,9 +156,9 @@ class HEJIEkmelilyTuningFileConverterTest(unittest.TestCase):
 
     def test_make_higher_prime_accidental(self):
         def round_deviation_in_cents(
-            ekmelily_accidental: ekmelily.EkmelilyAccidental,
-        ) -> ekmelily.EkmelilyAccidental:
-            return ekmelily.EkmelilyAccidental(
+            ekmelily_accidental: ekmelily_converters.EkmelilyAccidental,
+        ) -> ekmelily_converters.EkmelilyAccidental:
+            return ekmelily_converters.EkmelilyAccidental(
                 ekmelily_accidental.accidental_name,
                 ekmelily_accidental.accidental_glyph_tuple,
                 round(ekmelily_accidental.deviation_in_cents, 3),
@@ -167,7 +166,7 @@ class HEJIEkmelilyTuningFileConverterTest(unittest.TestCase):
             )
 
         default_args = (
-            ekmelily_constants.DEFAULT_PRIME_TO_HIGHEST_ALLOWED_EXPONENT_DICT,
+            ekmelily_converters.constants.DEFAULT_PRIME_TO_HIGHEST_ALLOWED_EXPONENT_DICT,
             {5: "five", 7: "seven", 11: "eleven"},
             "o",
             "u",
@@ -176,23 +175,25 @@ class HEJIEkmelilyTuningFileConverterTest(unittest.TestCase):
 
         self.assertEqual(
             round_deviation_in_cents(
-                ekmelily.HEJIEkmelilyTuningFileConverter._make_higher_prime_accidental(
+                ekmelily_converters.HEJIEkmelilyTuningFileConverter._make_higher_prime_accidental(
                     "", 0, (1, 0, 0), *default_args, True
                 )
             ),
             round_deviation_in_cents(
-                ekmelily.EkmelilyAccidental("ofiveone", ("#xE2C2",), -21.50628959671495)
+                ekmelily_converters.EkmelilyAccidental(
+                    "ofiveone", ("#xE2C2",), -21.50628959671495
+                )
             ),
         )
 
         self.assertEqual(
             round_deviation_in_cents(
-                ekmelily.HEJIEkmelilyTuningFileConverter._make_higher_prime_accidental(
+                ekmelily_converters.HEJIEkmelilyTuningFileConverter._make_higher_prime_accidental(
                     "", 0, (-2, 0, 0), *default_args, True
                 )
             ),
             round_deviation_in_cents(
-                ekmelily.EkmelilyAccidental(
+                ekmelily_converters.EkmelilyAccidental(
                     "ufivetwo", ("#xE2D1",), 2 * 21.50628959671495
                 )
             ),
@@ -200,14 +201,17 @@ class HEJIEkmelilyTuningFileConverterTest(unittest.TestCase):
 
         self.assertEqual(
             round_deviation_in_cents(
-                ekmelily.HEJIEkmelilyTuningFileConverter._make_higher_prime_accidental(
+                ekmelily_converters.HEJIEkmelilyTuningFileConverter._make_higher_prime_accidental(
                     "", 0, (1, -1, 0), *default_args, True
                 )
             ),
             round_deviation_in_cents(
-                ekmelily.EkmelilyAccidental(
+                ekmelily_converters.EkmelilyAccidental(
                     "ofiveoneusevenone",
-                    ("#xE2DF", "#xE2C2",),
+                    (
+                        "#xE2DF",
+                        "#xE2C2",
+                    ),
                     -21.50628959671495 + 27.264091800100235,
                 )
             ),
@@ -215,12 +219,12 @@ class HEJIEkmelilyTuningFileConverterTest(unittest.TestCase):
 
         self.assertEqual(
             round_deviation_in_cents(
-                ekmelily.HEJIEkmelilyTuningFileConverter._make_higher_prime_accidental(
+                ekmelily_converters.HEJIEkmelilyTuningFileConverter._make_higher_prime_accidental(
                     "s", 113.7, (0, 0, 1), *default_args, True
                 )
             ),
             round_deviation_in_cents(
-                ekmelily.EkmelilyAccidental(
+                ekmelily_converters.EkmelilyAccidental(
                     "soelevenone", ("#xE2E3", "#xE262"), 53.27294323014408 + 113.7
                 )
             ),
@@ -228,12 +232,12 @@ class HEJIEkmelilyTuningFileConverterTest(unittest.TestCase):
 
         self.assertEqual(
             round_deviation_in_cents(
-                ekmelily.HEJIEkmelilyTuningFileConverter._make_higher_prime_accidental(
+                ekmelily_converters.HEJIEkmelilyTuningFileConverter._make_higher_prime_accidental(
                     "ss", 2 * 113.7, (3, 0, 0), *default_args, True
                 )
             ),
             round_deviation_in_cents(
-                ekmelily.EkmelilyAccidental(
+                ekmelily_converters.EkmelilyAccidental(
                     "ssofivethree", ("#xE2D8",), (3 * -21.50628959671495) + (2 * 113.7)
                 )
             ),
@@ -242,11 +246,11 @@ class HEJIEkmelilyTuningFileConverterTest(unittest.TestCase):
     def test_convert(self):
         # regression test with doc string example
         comparision_file_path = (
-            "tests/converters/frontends/ekmelily_heji_expected_conversion_output.ily"
+            "tests/converters/ekmelily_heji_expected_conversion_output.ily"
         )
 
-        test_file_path = "tests/converters/frontends/ekme-heji-test.ily"
-        converter = ekmelily.HEJIEkmelilyTuningFileConverter(
+        test_file_path = "tests/converters/ekme-heji-test.ily"
+        converter = ekmelily_converters.HEJIEkmelilyTuningFileConverter(
             test_file_path,
             prime_to_highest_allowed_exponent={5: 2, 7: 1},
             reference_pitch="c",
