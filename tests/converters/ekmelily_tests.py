@@ -166,7 +166,7 @@ class HEJIEkmelilyTuningFileConverterTest(unittest.TestCase):
             )
 
         default_args = (
-            ekmelily_converters.constants.DEFAULT_PRIME_TO_HIGHEST_ALLOWED_EXPONENT_DICT,
+            ekmelily_converters.configurations.DEFAULT_PRIME_TO_HIGHEST_ALLOWED_EXPONENT_DICT,
             {5: "five", 7: "seven", 11: "eleven"},
             "o",
             "u",
