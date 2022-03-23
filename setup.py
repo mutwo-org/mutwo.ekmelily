@@ -32,7 +32,7 @@ setuptools.setup(
     setup_requires=[],
     install_requires=[
         "mutwo.ext-core>=0.55.0, <1.0.0",
-        "mutwo.ext-music>=0.7.0, <1.0.0",
+        "mutwo.ext-music>=0.7.0, <0.8.0",
     ],
     extras_require=extras_require,
     python_requires=">=3.9, <4",
