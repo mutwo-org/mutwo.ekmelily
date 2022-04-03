@@ -709,7 +709,7 @@ class HEJIEkmelilyTuningFileConverter(EkmelilyTuningFileConverter):
         cents_deviation = music_parameters.JustIntonationPitch(
             music_parameters.configurations.DEFAULT_PRIME_TO_COMMA_DICT[prime].ratio
             ** exponent
-        ).cents
+        ).interval
         return accidental_name, glyph, cents_deviation
 
     @staticmethod

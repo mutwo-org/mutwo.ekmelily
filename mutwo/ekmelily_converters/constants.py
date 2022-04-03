@@ -328,7 +328,7 @@ TEMPERED_ACCIDENTAL_TO_CENT_DEVIATION_DICT = {
 
 
 PYTHAGOREAN_ACCIDENTAL_CENT_DEVIATION_SIZE = round(
-    (music_parameters.JustIntonationPitch((0, 7)).normalize(mutate=False).cents), 2  # type: ignore
+    (music_parameters.JustIntonationPitch((0, 7)).normalize(mutate=False).interval), 2  # type: ignore
 )
 """Step in cents for one pythagorean accidental (# or b)."""
 
@@ -354,7 +354,7 @@ PYTHAGOREAN_ACCIDENTAL_TO_CENT_DEVIATION_DICT = {
 """Step in cents mapping for each pythagorean accidental (# or b)."""
 
 DIFFERENCE_BETWEEN_PYTHAGOREAN_AND_TEMPERED_FIFTH = (
-    music_parameters.JustIntonationPitch("3/2").cents - 700
+    music_parameters.JustIntonationPitch("3/2").interval - 700
 )
 """The difference in cents between a just fifth (3/2) and
 a 12-EDO fifth. This constant is used in
