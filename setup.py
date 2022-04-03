@@ -1,6 +1,6 @@
 import setuptools  # type: ignore
 
-MAJOR, MINOR, PATCH = 0, 5, 4
+MAJOR, MINOR, PATCH = 0, 5, 5
 VERSION = f"{MAJOR}.{MINOR}.{PATCH}"
 """This project uses semantic versioning.  See https://semver.org/ Before MAJOR = 1, there is no promise for
 backwards compatibility between minor versions.
