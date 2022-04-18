@@ -413,7 +413,7 @@ class EkmelilyTuningFileConverter(core_converters.abc.Converter):
 
         for accidental in self._ekmelily_accidental_sequence:
             for nth_diatonic_pitch, diatonic_pitch in enumerate(
-                music_parameters.constants.ASCENDING_DIATONIC_PITCH_NAME_TUPLE
+                music_parameters.constants.DIATONIC_PITCH_CLASS_CONTAINER
             ):
                 pitch_entry = self._get_pitch_entry_from_accidental_and_diatonic_pitch(
                     accidental, nth_diatonic_pitch, diatonic_pitch
@@ -476,7 +476,7 @@ class HEJIEkmelilyTuningFileConverter(EkmelilyTuningFileConverter):
     :type prime_to_highest_allowed_exponent: dict[int, int], optional
     :param reference_pitch: The reference pitch (1/1). Should be a diatonic
         pitch name (see
-        :const:`~mutwo.parameters.music_parameters.constants.ASCENDING_DIATONIC_PITCH_NAMES`)
+        :const:`~mutwo.parameters.music_parameters.constants.DIATONIC_PITCH_CLASS_CONTAINER`)
         in English nomenclature. For any other reference pitch than 'c', Lilyponds
         midi rendering for music_parameters with the diatonic pitch 'c' will be slightly
         out of tune (because the first value of `global_scale`
@@ -573,15 +573,17 @@ class HEJIEkmelilyTuningFileConverter(EkmelilyTuningFileConverter):
             )
         else:
             global_scale = None
-        ekmelily_accidental_sequence = HEJIEkmelilyTuningFileConverter._make_ekmelily_accidental_sequence(
-            difference_in_cents_from_tempered_pitch_class_for_diatonic_pitches,
-            prime_to_highest_allowed_exponent,
-            prime_to_heji_accidental_name,
-            otonality_indicator,
-            utonality_indicator,
-            exponent_to_exponent_indicator,
-            tempered_pitch_indicator,
-            set_microtonal_tuning,
+        ekmelily_accidental_sequence = (
+            HEJIEkmelilyTuningFileConverter._make_ekmelily_accidental_sequence(
+                difference_in_cents_from_tempered_pitch_class_for_diatonic_pitches,
+                prime_to_highest_allowed_exponent,
+                prime_to_heji_accidental_name,
+                otonality_indicator,
+                utonality_indicator,
+                exponent_to_exponent_indicator,
+                tempered_pitch_indicator,
+                set_microtonal_tuning,
+            )
         )
         super().__init__(path, ekmelily_accidental_sequence, global_scale=global_scale)
 
@@ -601,7 +603,7 @@ class HEJIEkmelilyTuningFileConverter(EkmelilyTuningFileConverter):
         )
         for (
             diatonic_pitch_name
-        ) in music_parameters.constants.ASCENDING_DIATONIC_PITCH_NAME_TUPLE:
+        ) in music_parameters.constants.DIATONIC_PITCH_CLASS_CONTAINER:
             pitch_index = music_parameters.constants.DIATONIC_PITCH_NAME_CYCLE_OF_FIFTH_TUPLE.index(
                 diatonic_pitch_name
             )
@@ -614,9 +616,7 @@ class HEJIEkmelilyTuningFileConverter(EkmelilyTuningFileConverter):
                 difference_from_tempered_diatonic_pitch
             )
 
-        return tuple(
-            difference_in_cents_from_tempered_pitch_class_for_diatonic_pitches
-        )
+        return tuple(difference_in_cents_from_tempered_pitch_class_for_diatonic_pitches)
 
     @staticmethod
     def _make_global_scale(
@@ -888,9 +888,11 @@ class HEJIEkmelilyTuningFileConverter(EkmelilyTuningFileConverter):
             )
         )
 
-        tempered_accidentals = HEJIEkmelilyTuningFileConverter._make_tempered_accidentals(
-            difference_in_cents_from_tempered_pitch_class_for_diatonic_pitches,
-            tempered_pitch_indicator,
+        tempered_accidentals = (
+            HEJIEkmelilyTuningFileConverter._make_tempered_accidentals(
+                difference_in_cents_from_tempered_pitch_class_for_diatonic_pitches,
+                tempered_pitch_indicator,
+            )
         )
 
         return (

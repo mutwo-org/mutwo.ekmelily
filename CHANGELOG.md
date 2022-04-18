@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.6.0] - 2022-04-18
+
+### Changed
+- to new `mutwo.ext-music` version
+
+
 ## [0.4.0] - 2022-03-15
 
 ### Changed
