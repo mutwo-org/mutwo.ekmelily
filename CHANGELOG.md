@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+
+## [0.7.0] - 2022-07-10
+
+### Changed
+- from `mutwo.ext-ekmelily` to `mutwo.ekmelily`
+
+
 ## [0.6.0] - 2022-04-18
 
 ### Changed
