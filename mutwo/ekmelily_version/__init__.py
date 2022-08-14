@@ -1,4 +1,6 @@
 MAJOR, MINOR, PATCH = 0, 7, 1
-__version__ = f"{MAJOR}.{MINOR}.{PATCH}"
+
+VERSION = f"{MAJOR}.{MINOR}.{PATCH}"
+"""The version of the package ``mutwo.ekmelily``."""
 
 del MAJOR, MINOR, PATCH
