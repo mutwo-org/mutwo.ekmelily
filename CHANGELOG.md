@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 
+## [0.8.0] - 2022-11-06
+
+### Dropped
+- python 3.9 support
+
+
 ## [0.7.0] - 2022-07-10
 
 ### Changed

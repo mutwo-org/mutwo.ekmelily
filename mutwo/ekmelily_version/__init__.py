@@ -1,4 +1,4 @@
-MAJOR, MINOR, PATCH = 0, 7, 2
+MAJOR, MINOR, PATCH = 0, 8, 0
 
 VERSION = f"{MAJOR}.{MINOR}.{PATCH}"
 """The version of the package ``mutwo.ekmelily``."""
