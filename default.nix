@@ -3,7 +3,7 @@ with pkgs.python310Packages;
 
 let
 
-  mutwo-music-archive = builtins.fetchTarball "https://github.com/mutwo-org/mutwo.music/archive/1a5bf4eeb036f191e704636aec970959f53234eb.tar.gz";
+  mutwo-music-archive = builtins.fetchTarball "https://github.com/mutwo-org/mutwo.music/archive/929ec3faadd6426356d27df9614143e641be745d.tar.gz";
   mutwo-music = import (mutwo-music-archive + "/default.nix");
 
 in
