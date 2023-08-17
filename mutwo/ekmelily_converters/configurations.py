@@ -16,7 +16,7 @@ DEFAULT_GLOBAL_SCALE = (
     fractions.Fraction(11, 2),
 )
 """Default value for
-:class:`~mutwo.ext.converters.frontends.ekmelily.EkmelilyTuningFileConverter`
+:class:`~mutwo.ekmelily_converters.EkmelilyTuningFileConverter`
 argument `global_scale`."""
 
 
@@ -27,7 +27,7 @@ DEFAULT_PRIME_TO_HEJI_ACCIDENTAL_NAME_DICT = {
     )
 }
 """Default mapping for
-:class:`~mutwo.ext.converters.frontends.ekmelily.HEJIEkmelilyTuningFileConverter`
+:class:`~mutwo.ekmelily_converters.HEJIEkmelilyTuningFileConverter`
 argument `prime_to_heji_accidental_name`."""
 
 DEFAULT_PRIME_TO_HIGHEST_ALLOWED_EXPONENT_DICT = {
@@ -44,28 +44,28 @@ DEFAULT_PRIME_TO_HIGHEST_ALLOWED_EXPONENT_DICT = {
     )
 }
 """Default value for
-:class:`~mutwo.ext.converters.frontends.ekmelily.HEJIEkmelilyTuningFileConverter`
+:class:`~mutwo.ekmelily_converters.HEJIEkmelilyTuningFileConverter`
 argument `prime_to_highest_allowed_exponent`."""
 
 DEFAULT_TEMPERED_PITCH_INDICATOR = "t"
 """Default value for
-:class:`~mutwo.ext.converters.frontends.ekmelily.HEJIEkmelilyTuningFileConverter`
+:class:`~mutwo.ekmelily_converters.HEJIEkmelilyTuningFileConverter`
 argument `tempered_pitch_indicator`."""
 
 DEFAULT_OTONALITY_INDICATOR = "o"
 """Default value for
-:class:`~mutwo.ext.converters.frontends.ekmelily.HEJIEkmelilyTuningFileConverter`
+:class:`~mutwo.ekmelily_converters.HEJIEkmelilyTuningFileConverter`
 argument `otonality_indicator`."""
 
 DEFAULT_UTONALITY_INDICATOR = "u"
 """Default value for
-:class:`~mutwo.ext.converters.frontends.ekmelily.HEJIEkmelilyTuningFileConverter`
+:class:`~mutwo.ekmelily_converters.HEJIEkmelilyTuningFileConverter`
 argument `utonality_indicator`."""
 
 # solution from: https://stackoverflow.com/questions/23199733/convert-numbers-into-corresponding-letter-using-python
 DEFAULT_EXPONENT_TO_EXPONENT_INDICATOR = lambda exponent: chr(ord("a") + exponent)
 """Default function for
-:class:`~mutwo.ext.converters.frontends.ekmelily.HEJIEkmelilyTuningFileConverter`
+:class:`~mutwo.ekmelily_converters.HEJIEkmelilyTuningFileConverter`
 argument `exponent_to_exponent_indicator`."""
 
 # Cleanup

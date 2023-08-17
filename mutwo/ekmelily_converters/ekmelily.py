@@ -44,8 +44,8 @@ class EkmelilyAccidental(object):
         a list of available glyphs, check the documentation of
         `Ekmelos <http://www.ekmelic-music.org/en/extra/ekmelos.htm>`_.
         Furthermore one can find mappings from mutwo data to Ekmelos glyph
-        names in :const:`~mutwo.ext.ekmelily_converters.constants.PRIME_AND_EXPONENT_AND_TRADITIONAL_ACCIDENTAL_TO_ACCIDENTAL_GLYPH_DICT`
-        and :const:`~mutwo.ext.ekmelily_converters.constants.TEMPERED_ACCIDENTAL_TO_ACCIDENTAL_GLYPH_DICT`.
+        names in :const:`~mutwo.ekmelily_converters.constants.PRIME_AND_EXPONENT_AND_TRADITIONAL_ACCIDENTAL_TO_ACCIDENTAL_GLYPH_DICT`
+        and :const:`~mutwo.ekmelily_converters.constants.TEMPERED_ACCIDENTAL_TO_ACCIDENTAL_GLYPH_DICT`.
     :type accidental_glyph_tuple: tuple[str, ...]
     :param deviation_in_cents: How many cents shall an altered pitch differ from
         its diatonic / natural counterpart.
@@ -60,10 +60,10 @@ class EkmelilyAccidental(object):
 
     **Example:**
 
-    >>> from mutwo.ext.converter.frontends import ekmelily
-    >>> natural = ekmelily.EkmelilyAccidental('', ("#xE261",), 0)
-    >>> sharp = ekmelily.EkmelilyAccidental('s', ("#xE262",), 100)
-    >>> flat = ekmelily.EkmelilyAccidental('f', ("#xE260",), -100)
+    >>> from mutwo import ekmelily_converters
+    >>> natural = ekmelily_converters.EkmelilyAccidental('', ("#xE261",), 0)
+    >>> sharp = ekmelily_converters.EkmelilyAccidental('s', ("#xE262",), 100)
+    >>> flat = ekmelily_converters.EkmelilyAccidental('f', ("#xE260",), -100)
     """
 
     accidental_name: str
@@ -100,13 +100,13 @@ class EkmelilyTuningFileConverter(core_converters.abc.Converter):
 
     **Example:**
 
-    >>> from mutwo.converter.frontends import ekmelily
-    >>> natural = ekmelily.EkmelilyAccidental('', ("#xE261",), 0)
-    >>> sharp = ekmelily.EkmelilyAccidental('s', ("#xE262",), 100)
-    >>> flat = ekmelily.EkmelilyAccidental('f', ("#xE260",), -100)
-    >>> eigth_tone_sharp = ekmelily.EkmelilyAccidental('es', ("#xE2C7",), 25)
-    >>> eigth_tone_flat = ekmelily.EkmelilyAccidental('ef', ("#xE2C2",), -25)
-    >>> converter = ekmelily.EkmelilyTuningFileConverter(
+    >>> from mutwo import ekmelily_converters
+    >>> natural = ekmelily_converters.EkmelilyAccidental('', ("#xE261",), 0)
+    >>> sharp = ekmelily_converters.EkmelilyAccidental('s', ("#xE262",), 100)
+    >>> flat = ekmelily_converters.EkmelilyAccidental('f', ("#xE260",), -100)
+    >>> eigth_tone_sharp = ekmelily_converters.EkmelilyAccidental('es', ("#xE2C7",), 25)
+    >>> eigth_tone_flat = ekmelily_converters.EkmelilyAccidental('ef', ("#xE2C2",), -25)
+    >>> converter = ekmelily_converters.EkmelilyTuningFileConverter(
     >>>     'ekme-test.ily', (natural, sharp, flat, eigth_tone_sharp, eigth_tone_flat)
     >>> )
     >>> converter.convert()

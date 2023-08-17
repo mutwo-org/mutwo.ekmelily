@@ -358,7 +358,7 @@ DIFFERENCE_BETWEEN_PYTHAGOREAN_AND_TEMPERED_FIFTH = (
 )
 """The difference in cents between a just fifth (3/2) and
 a 12-EDO fifth. This constant is used in
-:class:`~mutwo.ext.converters.frontends.ekmelily.HEJIEkmelilyTuningFileConverter`.
+:class:`~mutwo.ekmelily_converters.HEJIEkmelilyTuningFileConverter`.
 """
 
 # Cleanup
