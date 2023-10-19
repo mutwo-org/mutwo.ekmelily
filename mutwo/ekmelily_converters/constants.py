@@ -60,7 +60,7 @@ PRIME_AND_EXPONENT_AND_TRADITIONAL_ACCIDENTAL_TO_ACCIDENTAL_GLYPH_DICT = {
         music_parameters.constants.PITCH_CLASS_MODIFICATION_TO_ACCIDENTAL_NAME_DICT[
             fractions.Fraction(0, 1)
         ],
-    ): ("#xE2C2"),
+    ): ("#xE2CC"),
     (
         5,
         3,
