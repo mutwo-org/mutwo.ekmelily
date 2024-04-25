@@ -495,7 +495,7 @@ class HEJIEkmelilyTuningFileConverter(EkmelilyTuningFileConverter):
     :type otonality_indicator: str, optional
     :param utonality_indicator: String which indicates that the
         respective prime alteration is utonal. See
-        :const:`~mutwo.ekmelily_converters.configurations.DEFAULT_OTONALITY_INDICATOR`
+        :const:`~mutwo.ekmelily_converters.configurations.DEFAULT_UTONALITY_INDICATOR`
         for the default value.
     :type utonality_indicator: str, optional
     :param exponent_to_exponent_indicator: Function to convert the
@@ -510,8 +510,8 @@ class HEJIEkmelilyTuningFileConverter(EkmelilyTuningFileConverter):
         for the default value.
     :type tempered_pitch_indicator: str, optional
     :param set_microtonal_tuning: If set to ``False`` the converter won't apply any
-        microtonal music_parameters. In this case all chromatic music_parameters will return normal
-        12EDO music_parameters. Default to ``True``.
+        microtonal pitches. In this case all chromatic pitches will return normal
+        12EDO pitches. Default to ``True``.
     :type set_microtonal_tuning: bool
     """
 
@@ -709,7 +709,7 @@ class HEJIEkmelilyTuningFileConverter(EkmelilyTuningFileConverter):
         cents_deviation = music_parameters.JustIntonationPitch(
             music_parameters.configurations.DEFAULT_PRIME_TO_COMMA_DICT[prime].ratio
             ** exponent
-        ).interval
+        ).cents
         return accidental_name, glyph, cents_deviation
 
     @staticmethod
